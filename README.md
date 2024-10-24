@@ -31,7 +31,7 @@ This repository also showcases the integration of self-hosted large language mod
 2. **Run vLLMs**: Interact with the self-hosted LLMs by selecting vLLMs and using the Jupyter AI Chat.
  ![image](https://github.com/user-attachments/assets/643ee1aa-7e9e-4f60-a6f9-2d22b8093d37)
 
-4. **TODO** **Explore Jupyter AI**: Open the included notebooks to explore how Jupyter AI works in this environment.
+4. **TODO:** **Explore Jupyter AI**: Open the included notebooks to explore how Jupyter AI works in this environment.
 
 ## About
 
