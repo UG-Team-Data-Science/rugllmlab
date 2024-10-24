@@ -1,0 +1,5 @@
+jupyter-ai
+openai
+openai-chat
+python-dotenv
+build

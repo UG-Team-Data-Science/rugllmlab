@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling>=1.4.0", "jupyterlab~=4.0", "hatch-nodejs-version"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rugllm_provider"
+version = "0.1.0"
+description = "A provider for integrating Meta-Llama 70B model into jupyter-ai."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "VSA", email = "v.soancatl.aguilar@rug.nl" }
+]
+classifiers = [
+    "Framework :: Jupyter",
+    "Framework :: Jupyter :: JupyterLab",
+    "Framework :: Jupyter :: JupyterLab :: 4",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "langchain_openai",
+    "jupyter_ai",
+    "jupyter_ai_magics"
+]
+
+[project.urls]
+"Homepage" = "https://rug.nl"
+
+[project.entry-points."jupyter_ai.model_providers"]
+rugllm = "rugllm_provider.provider:RugLlmProvider"
+rugllm-chat = "rugllm_provider.provider:ChatRugLlmProvider"
+ruglitellm = "rugllm_provider.provider:RugLiteLlm"
+ruglitellm-chat = "rugllm_provider.provider:ChatRugLiteLlm"
+rugllmproxy = "rugllm_provider.provider:RugLlmProxyProvider"
+rugllmproxy-chat = "rugllm_provider.provider:ChatRugLlmProxyProvider"
+glfh = "rugllm_provider.provider:LlmGlfhProvider"
+glfh-chat = "rugllm_provider.provider:ChatLlmGlfhProvider"
+openrouter = "rugllm_provider.provider:OpenRouterProvider"
+openrouter-chat = "rugllm_provider.provider:ChatOpenRouterProvider"
+
+
+
+
+[tool.hatch.build.hooks.version]
+path = "rugllm_provider/_version.py"
+
