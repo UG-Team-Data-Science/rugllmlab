@@ -15,7 +15,7 @@ Launch interactive Jupyter notebooks directly from this repository. The Binder s
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UG-Team-Data-Science/rugllmlab/HEAD)
 
-Click on one of the buttons above to open the demo notebooks in a live environment.
+Click on one of the buttons above to open the demo in a live environment.
 
 ### 2. **Jupyter AI Integration**
 Explore how Jupyter AI enhances computational workflows. This includes:
