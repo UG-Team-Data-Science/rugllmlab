@@ -28,10 +28,18 @@ This repository also showcases the integration of self-hosted large language mod
 ## How to Use
 
 1. **Access the Binder demo**: Simply click the "launch | rug binder" badge above to start an interactive session.
-2. **Run vLLMs**: Interact with the self-hosted LLMs by selecting vLLMs and using the Jupyter AI Chat.
- ![image](https://github.com/user-attachments/assets/643ee1aa-7e9e-4f60-a6f9-2d22b8093d37)
-
-4. **TODO:** **Explore Jupyter AI**: Open the included notebooks to explore how Jupyter AI works in this environment.
+2. **Run vLLMs**: Interact with the self-hosted vLLMs.
+   - Open the Jupyter AI Chat
+   - ![image](https://github.com/user-attachments/assets/643ee1aa-7e9e-4f60-a6f9-2d22b8093d37)
+   
+   - Select a RugLiteLlm model
+   - ![image](https://github.com/user-attachments/assets/81aa7962-f689-4938-8c3a-d9a983c23c9c)
+   
+   - Provide the API KEY
+   - ![image](https://github.com/user-attachments/assets/bf3bf484-cdc5-4568-9bcd-fd93707e4576)
+   
+   - Save the changes, click on the back arrow and interact ...
+3. **TODO:** **Explore Jupyter AI**: Open the included notebooks to explore how Jupyter AI works in this environment.
 
 ## About
 
