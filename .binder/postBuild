@@ -1,5 +1,5 @@
 #!/bin/bash
 cd rugllm_provider
-pip install -e .
+pip install .
 
 pip install codeium-jupyter
