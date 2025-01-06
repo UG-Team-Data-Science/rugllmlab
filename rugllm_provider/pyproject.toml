@@ -37,6 +37,8 @@ dependencies = [
 [project.entry-points."jupyter_ai.model_providers"]
 rugllm = "rugllm_provider.provider:RugLlmProvider"
 rugllm-chat = "rugllm_provider.provider:ChatRugLlmProvider"
+rughbllm = "rugllm_provider.provider:RugHbLlm"
+rughbllm-chat = "rugllm_provider.provider:ChatRugHbLlm"
 ruglitellm = "rugllm_provider.provider:RugLiteLlm"
 ruglitellm-chat = "rugllm_provider.provider:ChatRugLiteLlm"
 rugllmproxy = "rugllm_provider.provider:RugLlmProxyProvider"
