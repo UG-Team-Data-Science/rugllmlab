@@ -79,6 +79,13 @@ class RugHBLlm(BaseProvider, OpenAI):
     openai_organization = "University of Groningen"
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
+    # Override the initialization to skip the API key requirement
+    def __init__(self, **kwargs):
+        # Remove 'openai_api_key' from kwargs if it exists
+        kwargs.pop('openai_api_key', None)
+        # Pass the remaining arguments to the parent class
+        super().__init__(openai_api_base=self.openai_api_base, **kwargs)
+
 class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     id = "rughbllm"
     name = "RugHbLlm"
@@ -92,6 +99,13 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     openai_api_base = getenv("RUGHBLLM_API_BASE", 'http://localhost/')
     openai_organization = "University of Groningen"
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
+
+    # Override the initialization to skip the API key requirement
+    def __init__(self, **kwargs):
+        # Remove 'openai_api_key' from kwargs if it exists
+        kwargs.pop('openai_api_key', None)
+        # Pass the remaining arguments to the parent class
+        super().__init__(openai_api_base=self.openai_api_base, **kwargs)
 
 class RugLiteLlm(BaseProvider, OpenAI):
     id = "ruglitellm"
