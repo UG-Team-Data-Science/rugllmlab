@@ -83,7 +83,7 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     id = "rughbllm"
     name = "RugHbLlm"
     models = [
-        "llama-3.1-8b-instruct-fp8"
+        "neuralmagic/Meta-Llama-3.1-8B-Instruct-quantized.w8a16"
     ]
     help = "Click here for more details on [RugLlm](https://rug.nl)"
     model_id_key = "model_name"
