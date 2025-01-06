@@ -64,6 +64,35 @@ class ChatRugLlmProvider(BaseProvider, ChatOpenAI):
             return error_details.get("code") == "invalid_api_key"
         return False
 
+
+class RugHBLlm(BaseProvider, OpenAI):
+    id = "rughbllm"
+    name = "RugHbLlm"
+    models = [
+        "neuralmagic/Meta-Llama-3.1-8B-Instruct-quantized.w8a16"
+    ]
+    help = "Click here for more details on [RugLlm](https://rug.nl)"
+    model_id_key = "model_name"
+    model_id_label = "Model ID"
+    pypi_package_deps = ["langchain_openai"]
+    openai_api_base = getenv("RUGHB_API_BASE", 'http://localhost/')
+    openai_organization = "University of Groningen"
+    persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
+
+class ChatRugHbLlm(BaseProvider, ChatOpenAI):
+    id = "rughbllm"
+    name = "RugHbLlm"
+    models = [
+        "llama-3.1-8b-instruct-fp8"
+    ]
+    help = "Click here for more details on [RugLlm](https://rug.nl)"
+    model_id_key = "model_name"
+    model_id_label = "Model ID"
+    pypi_package_deps = ["langchain_openai"]
+    openai_api_base = getenv("RUGHBLLM_API_BASE", 'http://localhost/')
+    openai_organization = "University of Groningen"
+    persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
+
 class RugLiteLlm(BaseProvider, OpenAI):
     id = "ruglitellm"
     name = "RugLiteLlm"
