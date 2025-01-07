@@ -65,7 +65,7 @@ class ChatRugLlmProvider(BaseProvider, ChatOpenAI):
         return False
 
 
-class RugHBLlm(BaseProvider, OpenAI):
+class RugHbLlm(BaseProvider, OpenAI):
     id = "rughbllm"
     name = "RugHbLlm"
     models = [
