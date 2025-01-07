@@ -1,4 +1,7 @@
 #!/bin/bash
+
+pip install jupyterlab_bsshconn-0.1.0-py3-none-any.whl
+
 cd rugllm_provider
 pip install .
 
