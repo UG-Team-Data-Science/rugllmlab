@@ -75,7 +75,7 @@ class RugHBLlm(BaseProvider, OpenAI):
     model_id_key = "model_name"
     model_id_label = "Model ID"
     pypi_package_deps = ["langchain_openai"]
-     auth_strategy = EnvAuthStrategy(
+    auth_strategy = EnvAuthStrategy(
         name="RUGHB_API_KEY", keyword_param="openai_api_key"
     )
     openai_api_base = getenv("RUGHB_API_BASE", 'http://localhost/')
