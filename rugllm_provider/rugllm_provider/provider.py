@@ -80,7 +80,7 @@ class RugHBLlm(BaseProvider, OpenAI):
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
     auth_strategy = EnvAuthStrategy(
-        name="RUGHB_API_KEY", keyword_param="rughb_api_key_param"
+        name="RUGHB_API_KEY", keyword_param="openai_api_key"
     )
 
 class ChatRugHbLlm(BaseProvider, ChatOpenAI):
@@ -98,7 +98,7 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
     auth_strategy = EnvAuthStrategy(
-        name="RUGHB_API_KEY", keyword_param="rughb_api_key_param"
+        name="RUGHB_API_KEY", keyword_param="openai_api_key"
     )
 
 class RugLiteLlm(BaseProvider, OpenAI):
