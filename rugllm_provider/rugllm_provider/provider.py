@@ -75,13 +75,14 @@ class RugHBLlm(BaseProvider, OpenAI):
     model_id_key = "model_name"
     model_id_label = "Model ID"
     pypi_package_deps = ["langchain_openai"]
+     auth_strategy = EnvAuthStrategy(
+        name="RUGHB_API_KEY", keyword_param="openai_api_key"
+    )
     openai_api_base = getenv("RUGHB_API_BASE", 'http://localhost/')
     openai_organization = "University of Groningen"
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
-    auth_strategy = EnvAuthStrategy(
-        name="RUGHB_API_KEY", keyword_param="openai_api_key"
-    )
+
 
 class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     id = "rughbllm"
@@ -93,13 +94,14 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     model_id_key = "model_name"
     model_id_label = "Model ID"
     pypi_package_deps = ["langchain_openai"]
+    auth_strategy = EnvAuthStrategy(
+        name="RUGHB_API_KEY", keyword_param="openai_api_key"
+    )
     openai_api_base = getenv("RUGHBLLM_API_BASE", 'http://localhost/')
     openai_organization = "University of Groningen"
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
-    auth_strategy = EnvAuthStrategy(
-        name="RUGHB_API_KEY", keyword_param="openai_api_key"
-    )
+
 
 class RugLiteLlm(BaseProvider, OpenAI):
     id = "ruglitellm"
