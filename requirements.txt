@@ -3,3 +3,4 @@ openai
 openai-chat
 python-dotenv
 build
+jupyterlab_bsshconn-0.1.0-py3-none-any.whl
