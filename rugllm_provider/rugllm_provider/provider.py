@@ -79,12 +79,9 @@ class RugHBLlm(BaseProvider, OpenAI):
     openai_organization = "University of Groningen"
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
-    # Override the initialization to skip the API key requirement
-    def __init__(self, **kwargs):
-        # Remove 'openai_api_key' from kwargs if it exists
-        kwargs.pop('openai_api_key', None)
-        # Pass the remaining arguments to the parent class
-        super().__init__(openai_api_base=self.openai_api_base, **kwargs)
+    auth_strategy = EnvAuthStrategy(
+        name="RUGHB_API_KEY", keyword_param="rughb_api_key_param"
+    )
 
 class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     id = "rughbllm"
@@ -100,12 +97,9 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     openai_organization = "University of Groningen"
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
-    # Override the initialization to skip the API key requirement
-    def __init__(self, **kwargs):
-        # Remove 'openai_api_key' from kwargs if it exists
-        kwargs.pop('openai_api_key', None)
-        # Pass the remaining arguments to the parent class
-        super().__init__(openai_api_base=self.openai_api_base, **kwargs)
+    auth_strategy = EnvAuthStrategy(
+        name="RUGHB_API_KEY", keyword_param="rughb_api_key_param"
+    )
 
 class RugLiteLlm(BaseProvider, OpenAI):
     id = "ruglitellm"
