@@ -23,27 +23,27 @@ class RugHbLlm(BaseProvider, OpenAI):
     )
     openai_api_base: str = getenv("RUGHB_API_BASE", 'http://localhost:8000/v1')
     
-    fields: ClassVar[List[Field]] = [
-        TextField(
-            key="openai_api_base",
-            label="OpenAI API Base",
-            default=getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
-            format="text",
-        )
-    ]
+    # fields: ClassVar[List[Field]] = [
+    #     TextField(
+    #         key="openai_api_base",
+    #         label="OpenAI API Base",
+    #         default=getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+    #         format="text",
+    #     )
+    # ]
     
     openai_organization: str = "University of Groningen"
     persona: str = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
     
-    def __init__(self, **kwargs):
-        # Fetch openai_api_base from kwargs or environment variable
-        kwargs["openai_api_base"] = kwargs.get(
-            "openai_api_base",
-            getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
-        )
-        # Pass all kwargs to the superclass initializer
-        super().__init__(**kwargs)
+    # def __init__(self, **kwargs):
+    #     # Fetch openai_api_base from kwargs or environment variable
+    #     kwargs["openai_api_base"] = kwargs.get(
+    #         "openai_api_base",
+    #         getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+    #     )
+    #     # Pass all kwargs to the superclass initializer
+    #     super().__init__(**kwargs)
 
 
 class ChatRugHbLlm(BaseProvider, ChatOpenAI):
@@ -63,26 +63,26 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     )
     openai_api_base: str = getenv("RUGHBLLM_API_BASE", 'http://localhost:8000/v1')
 
-    fields: ClassVar[List[Field]] = [
-        TextField(
-            key="openai_api_base",
-            label="OpenAI API Base",
-            default=getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
-            format="text",
-        )
-    ]
+    # fields: ClassVar[List[Field]] = [
+    #     TextField(
+    #         key="openai_api_base",
+    #         label="OpenAI API Base",
+    #         default=getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+    #         format="text",
+    #     )
+    # ]
     
     openai_organization: str = "University of Groningen"
     persona: str = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
-    def __init__(self, **kwargs):
-        # Fetch openai_api_base from kwargs or environment variable
-        kwargs["openai_api_base"] = kwargs.get(
-            "openai_api_base",
-            getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
-        )
-        # Pass all kwargs to the superclass initializer
-        super().__init__(**kwargs)
+    # def __init__(self, **kwargs):
+    #     # Fetch openai_api_base from kwargs or environment variable
+    #     kwargs["openai_api_base"] = kwargs.get(
+    #         "openai_api_base",
+    #         getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+    #     )
+    #     # Pass all kwargs to the superclass initializer
+    #     super().__init__(**kwargs)
 
     
 class RugLiteLlm(BaseProvider, OpenAI):
