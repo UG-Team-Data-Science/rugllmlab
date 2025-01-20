@@ -4,67 +4,6 @@ from jupyter_ai import EnvAuthStrategy, Field
 from jupyter_ai_magics import BaseProvider, Persona
 from os import getenv
 
-class RugLlmProvider(BaseProvider, OpenAI):
-    id = "rugllm"
-    name = "RugLlm"
-    models = [
-#        "neuralmagic/Meta-Llama-3.1-70B-Instruct-FP8"
-        "neuralmagic/Meta-Llama-3.1-8B-Instruct-FP8"
-    ]
-    help = "Click here for more details on [RugLlm](https://rug.nl)"
-    model_id_key = "model_name"
-    model_id_label = "Model ID"
-    pypi_package_deps = ["langchain_openai"]
-    auth_strategy = EnvAuthStrategy(
-        name="RUGLLM_API_KEY", keyword_param="openai_api_key",
-    )
-    # openai_api_key = getenv("RUGLLM_API_KEY", 'Empty')
-    openai_api_base = getenv("RUGLLM_API_BASE", 'http://vllm:8000/v1')
-    openai_organization = "University of Groningen"
-    persona = Persona(name="RugLlm", avatar_route="api/ai/static/jupyternaut.svg")
-
-    @classmethod
-    def is_api_key_exc(cls, e: Exception):
-        """
-        Determine if the exception is an RugLlm API key error.
-        """
-        import openai
-        if isinstance(e, openai.AuthenticationError):
-            error_details = e.json_body.get("error", {})
-            return error_details.get("code") == "invalid_api_key"
-        return False
-
-class ChatRugLlmProvider(BaseProvider, ChatOpenAI):
-    id = "rugllm"
-    name = "RugLlm"
-    models = [
-#        "neuralmagic/Meta-Llama-3.1-70B-Instruct-FP8"
-        "neuralmagic/Meta-Llama-3.1-8B-Instruct-FP8"
-    ]
-    help = "Click here for more details on [RugLlm](https://rug.nl)"
-    model_id_key = "model_name"
-    model_id_label = "Model ID"
-    pypi_package_deps = ["langchain_openai"]
-    auth_strategy = EnvAuthStrategy(
-        name="RUGLLM_API_KEY", keyword_param="openai_api_key",
-    )
-    # openai_api_key = getenv("RUGLLM_API_KEY", '')
-    openai_api_base = getenv("RUGLLM_API_BASE", 'http://vllm:8000/v1')
-    openai_organization = "University of Groningen"
-    persona = Persona(name="RugLlm", avatar_route="api/ai/static/jupyternaut.svg")
-
-    @classmethod
-    def is_api_key_exc(cls, e: Exception):
-        """
-        Determine if the exception is an RugLlm API key error.
-        """
-        import openai
-        if isinstance(e, openai.AuthenticationError):
-            error_details = e.json_body.get("error", {})
-            return error_details.get("code") == "invalid_api_key"
-        return False
-
-
 class RugHbLlm(BaseProvider, OpenAI):
     id = "rughbllm"
     name = "RugHbLlm"
@@ -80,7 +19,7 @@ class RugHbLlm(BaseProvider, OpenAI):
     auth_strategy = EnvAuthStrategy(
         name="RUGHB_API_KEY", keyword_param="openai_api_key"
     )
-    openai_api_base = getenv("RUGHB_API_BASE", 'http://localhost:8000/v1')
+    openai_api_base: str = getenv("RUGHB_API_BASE", 'http://localhost:8000/v1')
     openai_organization = "University of Groningen"
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
@@ -101,7 +40,7 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     auth_strategy = EnvAuthStrategy(
         name="RUGHB_API_KEY", keyword_param="openai_api_key"
     )
-    openai_api_base = getenv("RUGHBLLM_API_BASE", 'http://localhost:8000/v1')
+    openai_api_base: str = getenv("RUGHBLLM_API_BASE", 'http://localhost:8000/v1')
     openai_organization = "University of Groningen"
     persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
@@ -121,7 +60,7 @@ class RugLiteLlm(BaseProvider, OpenAI):
     auth_strategy = EnvAuthStrategy(
         name="RUGLITELLM_API_KEY", keyword_param="openai_api_key",
     )
-    openai_api_base = getenv("RUGLITELLM_API_BASE", 'https://llm.hpc.rug.nl/')
+    openai_api_base: str = getenv("RUGLITELLM_API_BASE", 'https://llm.hpc.rug.nl/')
     openai_organization = "University of Groningen"
     persona = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
@@ -139,74 +78,11 @@ class ChatRugLiteLlm(BaseProvider, ChatOpenAI):
     auth_strategy = EnvAuthStrategy(
         name="RUGLITELLM_API_KEY", keyword_param="openai_api_key",
     )
-    openai_api_base = getenv("RUGLITELLM_API_BASE", 'https://llm.hpc.rug.nl/')
+    openai_api_base: str = getenv("RUGLITELLM_API_BASE", 'https://llm.hpc.rug.nl/')
     openai_organization = "University of Groningen"
     persona = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
 
-
-class RugLlmProxyProvider(BaseProvider, OpenAI):
-    id = "rugllmproxy"
-    name = "RugLlmProxy"
-    models = [
-#        "neuralmagic/Meta-Llama-3.1-70B-Instruct-FP8"
-        "neuralmagic/Meta-Llama-3.1-8B-Instruct-FP8"
-    ]
-    help = "Click here for more details on [RugLlm](https://rug.nl)"
-    model_id_key = "model_name"
-    model_id_label = "Model ID"
-    pypi_package_deps = ["langchain_openai"]
-    auth_strategy = EnvAuthStrategy(
-        name="RUGLLMPROXY_API_KEY", keyword_param="openai_api_key",
-    )
-    # openai_api_key = getenv("RUGLLM_API_KEY", 'Empty')
-    openai_api_base = getenv("RUGLLMPROXY_API_BASE", 'http://web:8010/v2')
-    # openai_proxy = getenv("RUGLLM_PROXY","http://web:8010/v1")
-  
-    openai_organization = "University of Groningen"
-    persona = Persona(name="RugLlmProxy", avatar_route="api/ai/static/jupyternaut.svg")
-
-    @classmethod
-    def is_api_key_exc(cls, e: Exception):
-        """
-        Determine if the exception is an RugLlm API key error.
-        """
-        import openai
-        if isinstance(e, openai.AuthenticationError):
-            error_details = e.json_body.get("error", {})
-            return error_details.get("code") == "invalid_api_key"
-        return False
-
-class ChatRugLlmProxyProvider(BaseProvider, ChatOpenAI):
-    id = "rugllmproxy"
-    name = "RugLlmProxy"
-    models = [
-#         "neuralmagic/Meta-Llama-3.1-70B-Instruct-FP8"
-        "neuralmagic/Meta-Llama-3.1-8B-Instruct-FP8"
-    ]
-    help = "Click here for more details on [RugLlm](https://rug.nl)"
-    model_id_key = "model_name"
-    model_id_label = "Model ID"
-    pypi_package_deps = ["langchain_openai"]
-    auth_strategy = EnvAuthStrategy(
-        name="RUGLLMPROXY_API_KEY", keyword_param="openai_api_key",
-    )
-    # openai_api_key = getenv("RUGLLM_API_KEY", '')
-    openai_api_base = getenv("RUGLLMPROXY_API_BASE", 'http://web:8010/v2')
-    # openai_proxy = getenv("RUGLLM_PROXY","http://web:8010/v1")
-    openai_organization = "University of Groningen"
-    persona = Persona(name="RugLlmProxy", avatar_route="api/ai/static/jupyternaut.svg")
-
-    @classmethod
-    def is_api_key_exc(cls, e: Exception):
-        """
-        Determine if the exception is an RugLlm API key error.
-        """
-        import openai
-        if isinstance(e, openai.AuthenticationError):
-            error_details = e.json_body.get("error", {})
-            return error_details.get("code") == "invalid_api_key"
-        return False
 
 class LlmGlfhProvider(BaseProvider, OpenAI):
     id = "glfh"
@@ -251,7 +127,7 @@ class LlmGlfhProvider(BaseProvider, OpenAI):
     auth_strategy = EnvAuthStrategy(
         name="GLFH_API_KEY", keyword_param="openai_api_key",
     )
-    openai_api_base = getenv("GLFH_API_BASE", 'https://glhf.chat/api/openai/v1')
+    openai_api_base: str = getenv("GLFH_API_BASE", 'https://glhf.chat/api/openai/v1')
     # openai_proxy = getenv("RUGLLM_PROXY","http://web:8010/v1")
   
     openai_organization = "GLFH"
@@ -310,7 +186,7 @@ class ChatLlmGlfhProvider(BaseProvider, ChatOpenAI):
     auth_strategy = EnvAuthStrategy(
         name="GLFH_API_KEY", keyword_param="openai_api_key",
     )
-    openai_api_base = getenv("GLFH_API_BASE", 'https://glhf.chat/api/openai/v1')
+    openai_api_base: str = getenv("GLFH_API_BASE", 'https://glhf.chat/api/openai/v1')
     # openai_proxy = getenv("RUGLLM_PROXY","http://web:8010/v1")
     openai_organization = "GLFH"
     persona = Persona(name="Glfh", avatar_route="api/ai/static/jupyternaut.svg")
@@ -353,7 +229,7 @@ class OpenRouterProvider(BaseProvider, OpenAI):
         name="OPENROUTER_API_KEY", keyword_param="open_api_key",
     )
     # openai_api_key = getenv("RUGLLM_API_KEY", 'Empty')
-    openai_api_base = getenv("OPENROUTER_API_BASE", 'https://openrouter.ai/api/v1')
+    openai_api_base: str = getenv("OPENROUTER_API_BASE", 'https://openrouter.ai/api/v1')
     openai_organization = "Open Router"
     persona = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
 
@@ -383,7 +259,7 @@ class ChatOpenRouterProvider(BaseProvider, ChatOpenAI):
     auth_strategy = EnvAuthStrategy(
         name="OPENROUTER_API_KEY", keyword_param="open_api_key",
     )
-    openai_api_base = getenv("OPENROUTER_API_BASE", 'https://openrouter.ai/api/v1')
+    openai_api_base: str = getenv("OPENROUTER_API_BASE", 'https://openrouter.ai/api/v1')
     openai_organization = "Open Router"
     persona = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
 
