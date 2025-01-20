@@ -33,7 +33,7 @@ class RugHbLlm(BaseProvider, OpenAI):
     # ]
     
     openai_organization: str = "University of Groningen"
-    persona: str = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
+    persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
     
     # def __init__(self, **kwargs):
@@ -73,7 +73,7 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     # ]
     
     openai_organization: str = "University of Groningen"
-    persona: str = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
+    persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
     # def __init__(self, **kwargs):
     #     # Fetch openai_api_base from kwargs or environment variable
@@ -101,7 +101,7 @@ class RugLiteLlm(BaseProvider, OpenAI):
     )
     openai_api_base: str = getenv("RUGLITELLM_API_BASE", 'https://llm.hpc.rug.nl/')
     openai_organization: str = "University of Groningen"
-    persona: str = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
+    persona = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
 class ChatRugLiteLlm(BaseProvider, ChatOpenAI):
     id = "ruglitellm"
@@ -119,7 +119,7 @@ class ChatRugLiteLlm(BaseProvider, ChatOpenAI):
     )
     openai_api_base: str = getenv("RUGLITELLM_API_BASE", 'https://llm.hpc.rug.nl/')
     openai_organization: str = "University of Groningen"
-    persona: str = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
+    persona = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
 
 
