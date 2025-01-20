@@ -20,8 +20,8 @@ class RugHbLlm(BaseProvider, OpenAI):
         name="RUGHB_API_KEY", keyword_param="openai_api_key"
     )
     openai_api_base: str = getenv("RUGHB_API_BASE", 'http://localhost:8000/v1')
-    openai_organization = "University of Groningen"
-    persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
+    openai_organization: str = "University of Groningen"
+    persona: str = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
 
 
@@ -41,8 +41,8 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
         name="RUGHB_API_KEY", keyword_param="openai_api_key"
     )
     openai_api_base: str = getenv("RUGHBLLM_API_BASE", 'http://localhost:8000/v1')
-    openai_organization = "University of Groningen"
-    persona = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
+    openai_organization: str = "University of Groningen"
+    persona: str = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
 
 
@@ -61,8 +61,8 @@ class RugLiteLlm(BaseProvider, OpenAI):
         name="RUGLITELLM_API_KEY", keyword_param="openai_api_key",
     )
     openai_api_base: str = getenv("RUGLITELLM_API_BASE", 'https://llm.hpc.rug.nl/')
-    openai_organization = "University of Groningen"
-    persona = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
+    openai_organization: str = "University of Groningen"
+    persona: str = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
 class ChatRugLiteLlm(BaseProvider, ChatOpenAI):
     id = "ruglitellm"
@@ -79,8 +79,8 @@ class ChatRugLiteLlm(BaseProvider, ChatOpenAI):
         name="RUGLITELLM_API_KEY", keyword_param="openai_api_key",
     )
     openai_api_base: str = getenv("RUGLITELLM_API_BASE", 'https://llm.hpc.rug.nl/')
-    openai_organization = "University of Groningen"
-    persona = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
+    openai_organization: str = "University of Groningen"
+    persona: str = Persona(name="RugLiteLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
 
 
@@ -130,8 +130,8 @@ class LlmGlfhProvider(BaseProvider, OpenAI):
     openai_api_base: str = getenv("GLFH_API_BASE", 'https://glhf.chat/api/openai/v1')
     # openai_proxy = getenv("RUGLLM_PROXY","http://web:8010/v1")
   
-    openai_organization = "GLFH"
-    persona = Persona(name="Glfh", avatar_route="api/ai/static/jupyternaut.svg")
+    openai_organization: str = "GLFH"
+    persona: str = Persona(name="Glfh", avatar_route="api/ai/static/jupyternaut.svg")
 
     @classmethod
     def is_api_key_exc(cls, e: Exception):
@@ -188,8 +188,8 @@ class ChatLlmGlfhProvider(BaseProvider, ChatOpenAI):
     )
     openai_api_base: str = getenv("GLFH_API_BASE", 'https://glhf.chat/api/openai/v1')
     # openai_proxy = getenv("RUGLLM_PROXY","http://web:8010/v1")
-    openai_organization = "GLFH"
-    persona = Persona(name="Glfh", avatar_route="api/ai/static/jupyternaut.svg")
+    openai_organization: str = "GLFH"
+    persona: str = Persona(name="Glfh", avatar_route="api/ai/static/jupyternaut.svg")
 
     @classmethod
     def is_api_key_exc(cls, e: Exception):
@@ -230,8 +230,8 @@ class OpenRouterProvider(BaseProvider, OpenAI):
     )
     # openai_api_key = getenv("RUGLLM_API_KEY", 'Empty')
     openai_api_base: str = getenv("OPENROUTER_API_BASE", 'https://openrouter.ai/api/v1')
-    openai_organization = "Open Router"
-    persona = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
+    openai_organization: str = "Open Router"
+    persona: str = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
 
 class ChatOpenRouterProvider(BaseProvider, ChatOpenAI):
     id = "openrouter"
@@ -260,6 +260,6 @@ class ChatOpenRouterProvider(BaseProvider, ChatOpenAI):
         name="OPENROUTER_API_KEY", keyword_param="open_api_key",
     )
     openai_api_base: str = getenv("OPENROUTER_API_BASE", 'https://openrouter.ai/api/v1')
-    openai_organization = "Open Router"
-    persona = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
+    openai_organization: str = "Open Router"
+    persona: str = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
 
