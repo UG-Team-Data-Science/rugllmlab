@@ -71,7 +71,7 @@ class RugHbLlm(BaseProvider, OpenAI):
     models = [
         "neuralmagic/Meta-Llama-3.1-8B-Instruct-quantized.w8a16",
         "mistralai/Mistral-7B-v0.1",
-        "google/gemma-2b",
+        "google/gemma-2b"
     ]
     help = "Click here for more details on [RugLlm](https://rug.nl)"
     model_id_key = "model_name"
@@ -92,7 +92,7 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     models = [
         "neuralmagic/Meta-Llama-3.1-8B-Instruct-quantized.w8a16",
         "mistralai/Mistral-7B-v0.1",
-        "google/gemma-2b",
+        "google/gemma-2b"
     ]
     help = "Click here for more details on [RugLlm](https://rug.nl)"
     model_id_key = "model_name"
