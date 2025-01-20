@@ -20,10 +20,26 @@ class RugHbLlm(BaseProvider, OpenAI):
         name="RUGHB_API_KEY", keyword_param="openai_api_key"
     )
     openai_api_base: str = getenv("RUGHB_API_BASE", 'http://localhost:8000/v1')
+    
+    fields: ClassVar[List[Field]] = [
+        TextField(
+            key="openai_api_base",
+            label="OpenAI API Base",
+            default=getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+        )
+    ]
+    
     openai_organization: str = "University of Groningen"
     persona: str = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
-
+    
+    def __init__(self, **kwargs):
+        # Fetch the openai_api_base from the provided configuration or environment variable
+        self.openai_api_base = kwargs.get(
+            "openai_api_base",
+            getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+        )
+        super().__init__(**kwargs)
 
 class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     id = "rughbllm"
@@ -41,10 +57,25 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
         name="RUGHB_API_KEY", keyword_param="openai_api_key"
     )
     openai_api_base: str = getenv("RUGHBLLM_API_BASE", 'http://localhost:8000/v1')
+
+    fields: ClassVar[List[Field]] = [
+        TextField(
+            key="openai_api_base",
+            label="OpenAI API Base",
+            default=getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+        )
+    ]
+    
     openai_organization: str = "University of Groningen"
     persona: str = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
-
+    def __init__(self, **kwargs):
+        # Fetch the openai_api_base from the provided configuration or environment variable
+        self.openai_api_base = kwargs.get(
+            "openai_api_base",
+            getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+        )
+        super().__init__(**kwargs)
 
 class RugLiteLlm(BaseProvider, OpenAI):
     id = "ruglitellm"
