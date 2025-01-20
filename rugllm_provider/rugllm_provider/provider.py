@@ -37,12 +37,14 @@ class RugHbLlm(BaseProvider, OpenAI):
 
     
     def __init__(self, **kwargs):
-        # Fetch the openai_api_base from the provided configuration or environment variable
-        self.openai_api_base = kwargs.get(
+        # Fetch openai_api_base from kwargs or environment variable
+        kwargs["openai_api_base"] = kwargs.get(
             "openai_api_base",
             getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
         )
+        # Pass all kwargs to the superclass initializer
         super().__init__(**kwargs)
+
 
 class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     id = "rughbllm"
@@ -74,13 +76,15 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     persona: str = Persona(name="RugHbLlm", avatar_route="api/ai/static/jupyternaut.svg")
 
     def __init__(self, **kwargs):
-        # Fetch the openai_api_base from the provided configuration or environment variable
-        self.openai_api_base = kwargs.get(
+        # Fetch openai_api_base from kwargs or environment variable
+        kwargs["openai_api_base"] = kwargs.get(
             "openai_api_base",
             getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
         )
+        # Pass all kwargs to the superclass initializer
         super().__init__(**kwargs)
 
+    
 class RugLiteLlm(BaseProvider, OpenAI):
     id = "ruglitellm"
     name = "RugLiteLlm"
