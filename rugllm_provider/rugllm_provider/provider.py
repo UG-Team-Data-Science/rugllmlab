@@ -1,4 +1,5 @@
 # rugllm_provider/provider.py
+from typing import ClassVar, List
 from langchain_openai import ChatOpenAI, OpenAI, OpenAIEmbeddings
 # from jupyter_ai import EnvAuthStrategy, Field
 from jupyter_ai_magics import BaseProvider, Persona
