@@ -27,6 +27,7 @@ class RugHbLlm(BaseProvider, OpenAI):
             key="openai_api_base",
             label="OpenAI API Base",
             default=getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+            format="text",
         )
     ]
     
@@ -64,6 +65,7 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
             key="openai_api_base",
             label="OpenAI API Base",
             default=getenv("RUGHB_API_BASE", "http://localhost:8000/v1"),
+            format="text",
         )
     ]
     
