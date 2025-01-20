@@ -3,3 +3,4 @@ openai
 openai-chat
 python-dotenv
 build
+pandas
