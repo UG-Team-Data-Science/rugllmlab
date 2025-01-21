@@ -170,7 +170,7 @@ class LlmGlfhProvider(BaseProvider, OpenAI):
     # openai_proxy = getenv("RUGLLM_PROXY","http://web:8010/v1")
   
     openai_organization: str = "GLFH"
-    persona: str = Persona(name="Glfh", avatar_route="api/ai/static/jupyternaut.svg")
+    persona = Persona(name="Glfh", avatar_route="api/ai/static/jupyternaut.svg")
 
     @classmethod
     def is_api_key_exc(cls, e: Exception):
@@ -228,7 +228,7 @@ class ChatLlmGlfhProvider(BaseProvider, ChatOpenAI):
     openai_api_base: str = getenv("GLFH_API_BASE", 'https://glhf.chat/api/openai/v1')
     # openai_proxy = getenv("RUGLLM_PROXY","http://web:8010/v1")
     openai_organization: str = "GLFH"
-    persona: str = Persona(name="Glfh", avatar_route="api/ai/static/jupyternaut.svg")
+    persona = Persona(name="Glfh", avatar_route="api/ai/static/jupyternaut.svg")
 
     @classmethod
     def is_api_key_exc(cls, e: Exception):
@@ -270,7 +270,7 @@ class OpenRouterProvider(BaseProvider, OpenAI):
     # openai_api_key = getenv("RUGLLM_API_KEY", 'Empty')
     openai_api_base: str = getenv("OPENROUTER_API_BASE", 'https://openrouter.ai/api/v1')
     openai_organization: str = "Open Router"
-    persona: str = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
+    persona = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
 
 class ChatOpenRouterProvider(BaseProvider, ChatOpenAI):
     id = "openrouter"
@@ -300,5 +300,5 @@ class ChatOpenRouterProvider(BaseProvider, ChatOpenAI):
     )
     openai_api_base: str = getenv("OPENROUTER_API_BASE", 'https://openrouter.ai/api/v1')
     openai_organization: str = "Open Router"
-    persona: str = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
+    persona = Persona(name="OpenRouter", avatar_route="api/ai/static/jupyternaut.svg")
 
