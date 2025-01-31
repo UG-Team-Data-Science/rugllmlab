@@ -40,10 +40,10 @@ rughbllm = "rugllm_provider.provider:RugHbLlm"
 rughbllm-chat = "rugllm_provider.provider:ChatRugHbLlm"
 ruglitellm = "rugllm_provider.provider:RugLiteLlm"
 ruglitellm-chat = "rugllm_provider.provider:ChatRugLiteLlm"
-glfh = "rugllm_provider.provider:LlmGlfhProvider"
-glfh-chat = "rugllm_provider.provider:ChatLlmGlfhProvider"
-openrouter = "rugllm_provider.provider:OpenRouterProvider"
-openrouter-chat = "rugllm_provider.provider:ChatOpenRouterProvider"
+# glfh = "rugllm_provider.provider:LlmGlfhProvider"
+# glfh-chat = "rugllm_provider.provider:ChatLlmGlfhProvider"
+# openrouter = "rugllm_provider.provider:OpenRouterProvider"
+# openrouter-chat = "rugllm_provider.provider:ChatOpenRouterProvider"
 
 
 
