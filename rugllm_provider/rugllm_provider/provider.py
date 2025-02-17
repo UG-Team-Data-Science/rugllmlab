@@ -52,7 +52,7 @@ class ChatRugHbLlm(BaseProvider, ChatOpenAI):
     models = [
         "neuralmagic/Meta-Llama-3.1-8B-Instruct-quantized.w8a16",
         "mistralai/Mistral-7B-Instruct-v0.3",
-        "google/gemma-2b"
+        "google/gemma-2b-it"
     ]
     help = "Click here for more details on [RugLlm](https://rug.nl)"
     model_id_key = "model_name"
